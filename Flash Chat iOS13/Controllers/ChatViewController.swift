@@ -59,11 +59,11 @@ class ChatViewController: UIViewController {
     }
     
     @IBAction func sendPressed(_ sender: UIButton) {
-        Task { @MainActor in
+        Task {
             if let messageBody = messageTextfield.text, let messageSender = Auth.auth().currentUser?.email {
                 do {
                     let ref = try await db.collection(K.FStore.collectionName).addDocument(data: [
-                        K.FStore.senderField : messageSender,
+                        K.FStore.senderField: messageSender,
                         K.FStore.bodyField: messageBody,
                         K.FStore.dateField: Date().timeIntervalSince1970
                     ])
@@ -110,8 +110,6 @@ extension ChatViewController: UITableViewDataSource {
         }
         cell.messageLabel?.text = message.body
         return cell
-        
     }
-    
     
 }
