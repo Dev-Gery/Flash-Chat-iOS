@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Chat View Controller-->
+        <scene sceneID="XHM-Dk-Ib0">
+            <objects>
+                <viewController storyboardIdentifier="chat" id="Noo-VW-HYr" customClass="ChatViewController" customModule="Flash_Chat_iOS13" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fM4-51-Wzx">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="48u-KX-62c">
+                                <rect key="frame" x="0.0" y="59" width="393" height="699"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EMO-Tu-qog">
+                                <rect key="frame" x="0.0" y="758" width="393" height="60"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write a message..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rYP-QO-mwb">
+                                        <rect key="frame" x="20" y="20" width="293" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="aXZ-fr-xru"/>
+                                        </constraints>
+                                        <color key="textColor" name="BrandPurple"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUe-yj-bGV">
+                                        <rect key="frame" x="333" y="20" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="6M5-fZ-0Kd"/>
+                                            <constraint firstAttribute="height" constant="40" id="BVj-Co-rZw"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="U7n-RJ-H45"/>
+                                            <constraint firstAttribute="width" constant="40" id="yyN-WI-ULG"/>
+                                        </constraints>
+                                        <color key="tintColor" name="BrandLightPurple"/>
+                                        <state key="normal" image="paperplane.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="sendPressed:" destination="Noo-VW-HYr" eventType="touchUpInside" id="cMy-jb-Uhz"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="BrandPurple"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="9Pv-Dh-fBl"/>
+                                    <constraint firstItem="rYP-QO-mwb" firstAttribute="top" secondItem="EMO-Tu-qog" secondAttribute="top" constant="20" id="OtF-M4-x8K"/>
+                                    <constraint firstAttribute="trailing" secondItem="eUe-yj-bGV" secondAttribute="trailing" constant="20" id="Tzy-kI-ya6"/>
+                                    <constraint firstItem="rYP-QO-mwb" firstAttribute="leading" secondItem="EMO-Tu-qog" secondAttribute="leading" constant="20" id="bWD-DF-Smf"/>
+                                    <constraint firstItem="eUe-yj-bGV" firstAttribute="top" secondItem="EMO-Tu-qog" secondAttribute="top" constant="20" id="dKe-SA-j7o"/>
+                                    <constraint firstItem="eUe-yj-bGV" firstAttribute="leading" secondItem="rYP-QO-mwb" secondAttribute="trailing" constant="20" id="hLi-z2-S9B"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fp3-Qv-Lkv"/>
+                        <color key="backgroundColor" name="BrandPurple"/>
+                        <constraints>
+                            <constraint firstItem="48u-KX-62c" firstAttribute="leading" secondItem="fp3-Qv-Lkv" secondAttribute="leading" id="56a-4r-YhK"/>
+                            <constraint firstItem="EMO-Tu-qog" firstAttribute="leading" secondItem="fp3-Qv-Lkv" secondAttribute="leading" id="acb-vg-GcJ"/>
+                            <constraint firstItem="EMO-Tu-qog" firstAttribute="top" secondItem="48u-KX-62c" secondAttribute="bottom" id="dby-JI-Krl"/>
+                            <constraint firstItem="EMO-Tu-qog" firstAttribute="trailing" secondItem="fp3-Qv-Lkv" secondAttribute="trailing" id="h7r-sf-bAb"/>
+                            <constraint firstItem="48u-KX-62c" firstAttribute="trailing" secondItem="fp3-Qv-Lkv" secondAttribute="trailing" id="oov-nl-oBb"/>
+                            <constraint firstItem="48u-KX-62c" firstAttribute="top" secondItem="fp3-Qv-Lkv" secondAttribute="top" id="u6P-cN-Q0g"/>
+                            <constraint firstItem="fp3-Qv-Lkv" firstAttribute="bottom" secondItem="EMO-Tu-qog" secondAttribute="bottom" id="voo-rn-eai"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="GQs-bw-SMe">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="sgk-xy-wB0">
+                            <connections>
+                                <action selector="logoutPressed:" destination="Noo-VW-HYr" id="tTP-cd-iwg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="messageTextfield" destination="rYP-QO-mwb" id="Ybv-Pb-0ob"/>
+                        <outlet property="tableView" destination="48u-KX-62c" id="nfX-yX-X1e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bAT-06-Olp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2930.2325581395348" y="134.54935622317598"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="paperplane.fill" catalog="system" width="128" height="119"/>
+        <namedColor name="BrandLightPurple">
+            <color red="0.98000001907348633" green="0.9649999737739563" blue="0.99599999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="BrandPurple">
+            <color red="0.67500001192092896" green="0.43500000238418579" blue="0.9179999828338623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -10,9 +10,8 @@ import UIKit
 import FirebaseCore
 
 class WelcomeViewController: UIViewController {
-
-    @IBOutlet weak var titleLabel: UILabel!
     
+    @IBOutlet weak var titleLabel: UILabel!
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
@@ -37,4 +36,13 @@ class WelcomeViewController: UIViewController {
         
     }
 
+    @IBAction func registerButtonPressed(_ sender: UIButton) {
+        let registerModule: RegisterViewController = RegisterRouter.createModule()
+        navigationController?.pushViewController(registerModule, animated: true)
+    }
+    
+    @IBAction func loginButtonPressed(_ sender: UIButton) {
+        let loginModule: LoginViewController = LoginRouter.createModule()
+        navigationController?.pushViewController(loginModule, animated: true)
+    }
 }

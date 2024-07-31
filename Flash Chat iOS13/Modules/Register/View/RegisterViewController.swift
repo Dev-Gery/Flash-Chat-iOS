@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  RegisterViewController.swift
 //  Flash Chat iOS13
 //
 //  Created by Angela Yu on 21/10/2019.
@@ -9,23 +9,21 @@
 import UIKit
 import FirebaseAuth
 
-class LoginViewController: UIViewController {
+class RegisterViewController: UIViewController {
 
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
     
-
-    @IBAction func loginPressed(_ sender: UIButton) {
+    @IBAction func registerPressed(_ sender: UIButton) {
         if let email = emailTextfield.text, let password = passwordTextfield.text {
-            Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
-                guard let strongSelf = self else { return }
+            Auth.auth().createUser(withEmail: email, password: password) { [weak self] authResult, error in
                 if let e = error {
                     print(e.localizedDescription)
                     return
                 }
                 if let r = authResult {
-                    print(r.user, r.description)
-                    strongSelf.performSegue(withIdentifier: K.loginSegue, sender: strongSelf)
+                    let chatModule: ChatViewController = ChatRouter.createModule()
+                    self?.navigationController?.pushViewController(chatModule, animated: true)
                 }
             }
         }
